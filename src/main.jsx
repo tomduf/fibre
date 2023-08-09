@@ -2,9 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import {Leva} from "leva";
+import {Canvas} from "@react-three/fiber";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <Leva />
+
+        <Canvas
+            shadows
+            camera={ {
+                fov: 60,
+                near: 0.1,
+                far: 200,
+                position: [ - 8, 3, 10 ]
+            } }
+        >
+            <App />
+        </Canvas>
+    </React.StrictMode>,
 )
